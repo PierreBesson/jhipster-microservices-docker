@@ -7,11 +7,11 @@ elk-elasticsearch:
 elk-logstash:
   container_name: elk-logstash
   image: logstash:2.2.2
-  volumes:
-    - ./logconfig/:/config-dir
-  command: logstash -f /config-dir/logstash.conf
   ports:
     - "5000:5000/udp"
+  volumes:
+    - ./log-monitoring/logconfig/:/config-dir
+  command: logstash -f /config-dir/logstash.conf
   links:
     - elk-elasticsearch:elasticsearch
 elk-kibana:

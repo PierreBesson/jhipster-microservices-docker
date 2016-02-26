@@ -3,7 +3,7 @@
 ## How to test
 - `./setup.sh` : run `yo jhipster` for all app
 - `mvn package`: build all apps
-- docker-compose up: launch everything at once
+- `docker-compose up`: launch everything at once
 
 ## Rules
 - Registry must be run from the docker hub image
@@ -16,4 +16,6 @@
 - Use only Maven for now
 - Use the power of Docker Compose v2
 
-## 
+## TODO
+- Create a global Dockerfile to build the war for every app (so that if the source has changed, the docker-compose can rebuild the images as needed)
+

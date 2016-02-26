@@ -1,0 +1,3 @@
+#common config shared between all apps
+configserver:
+  status: ${spring.cloud.config.uri}/${spring.cloud.config.name}/${spring.cloud.config.profile}/${spring.cloud.config.label} 
