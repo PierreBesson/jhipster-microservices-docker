@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "2.27.0",
+    "baseName": "gateway",
+    "packageName": "io.jhipster.dockermicroservices",
+    "packageFolder": "io/jhipster/dockermicroservices",
+    "authenticationType": "jwt",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "buildTool": "maven",
+    "jwtSecretKey": "799a9a6e41923adbd0fa2639c459ad8df0fedab9",
+    "rememberMeKey": "0354c70bfd2b5527ecab462fa7418b227128d833",
+    "useSass": false,
+    "enableTranslation": true,
+    "applicationType": "gateway",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}

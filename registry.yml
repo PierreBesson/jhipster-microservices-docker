@@ -1,0 +1,11 @@
+version: '2'
+services:
+  jhipster-registry:
+    container_name: jhipster-registry
+    image: jhipster/jhipster-registry
+    environment:
+      - "SPRING_PROFILES=dev,native"
+    ports:
+      - "8761:8761"
+    volumes:
+      - ./central-config:/central-config

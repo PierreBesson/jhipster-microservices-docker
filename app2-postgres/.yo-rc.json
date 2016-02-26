@@ -1,0 +1,23 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "2.27.0",
+    "baseName": "app",
+    "packageName": "com.mycompany.app",
+    "packageFolder": "com/mycompany/app",
+    "authenticationType": "jwt",
+    "hibernateCache": "ehcache",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "no",
+    "buildTool": "maven",
+    "jwtSecretKey": "799a9a6e41923adbd0fa2639c459ad8df0fedab9",
+    "rememberMeKey": "ac3c51f9b47af40bd3c7d65d21c1060dcb631cb6",
+    "applicationType": "microservice",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
