@@ -7,12 +7,12 @@
     "authenticationType": "jwt",
     "hibernateCache": "ehcache",
     "databaseType": "sql",
-    "devDatabaseType": "postgresql",
+    "devDatabaseType": "h2Disk",
     "prodDatabaseType": "postgresql",
     "searchEngine": "no",
     "buildTool": "maven",
-    "jwtSecretKey": "799a9a6e41923adbd0fa2639c459ad8df0fedab9",
-    "rememberMeKey": "3bf30d19526dd08f1bc019a8db2a084a338423a6",
+    "jwtSecretKey": "f1d8b4082a20947cb178abfc4ed974c283361239",
+    "rememberMeKey": "73a5e222b56324e5f9c00fe7664f7bb93d8731d1",
     "applicationType": "microservice",
     "testFrameworks": [
       "gatling"
