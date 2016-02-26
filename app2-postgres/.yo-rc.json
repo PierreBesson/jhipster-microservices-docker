@@ -1,9 +1,9 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "2.27.0",
-    "baseName": "app",
-    "packageName": "com.mycompany.app",
-    "packageFolder": "com/mycompany/app",
+    "baseName": "app2Postgres",
+    "packageName": "io.jhipster.dockermicroservices",
+    "packageFolder": "io/jhipster/dockermicroservices",
     "authenticationType": "jwt",
     "hibernateCache": "ehcache",
     "databaseType": "sql",
@@ -12,7 +12,7 @@
     "searchEngine": "no",
     "buildTool": "maven",
     "jwtSecretKey": "799a9a6e41923adbd0fa2639c459ad8df0fedab9",
-    "rememberMeKey": "ac3c51f9b47af40bd3c7d65d21c1060dcb631cb6",
+    "rememberMeKey": "3bf30d19526dd08f1bc019a8db2a084a338423a6",
     "applicationType": "microservice",
     "testFrameworks": [
       "gatling"

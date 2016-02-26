@@ -12,7 +12,7 @@
     "searchEngine": "no",
     "buildTool": "maven",
     "jwtSecretKey": "799a9a6e41923adbd0fa2639c459ad8df0fedab9",
-    "rememberMeKey": "f16dd804b3783f992b0a460445ad67f5f78cb780",
+    "rememberMeKey": "9c913d062059aaeaa26e712b9ec6ffb84d4702e0",
     "applicationType": "microservice",
     "testFrameworks": [
       "gatling"
