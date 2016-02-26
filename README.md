@@ -1,4 +1,4 @@
-# JHipster microservices docker
+# The Hipster of All Demos
 
 ## How to test
 - `./setup.sh` : run `yo jhipster` for all app
