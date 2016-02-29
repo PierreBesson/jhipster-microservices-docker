@@ -5,7 +5,7 @@ Contributions are welcome. Please check that you are using recent versions of do
 ## How to test
 - `./setup-apps.sh` : run `yo jhipster --force --with-entities` for all apps. This generate JHipster apps from their .yo-rc.json.
 - `./setup-entities.sh` : run `jhipster-uml entities.jh` for all apps. This generates entities from the entities.jh JDL file in this app folder.
-- `mvn package`: build all apps
+- `mvn package -DskipTests=true`: build all apps
 - `docker-compose up`: launch everything at once
 
 ## How to shutdown and clean up
