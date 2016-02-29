@@ -22,7 +22,7 @@ services:
     container_name: app1-mysql
     build: ./app1-mysql/
     ports:
-      - "8081:8081"
+      - "8081:8080"
     links:
       - jhipster-registry:registry
     depends_on:
@@ -31,12 +31,21 @@ services:
     container_name: app2-postgres
     build: ./app2-postgres/
     ports:
-      - "8082:8081"
+      - "8082:8080"
     links:
       - jhipster-registry:registry
     depends_on:
       - jhipster-registry
-  # Log monitoring
+  app3-mongo:
+    container_name: app3-mongo
+    build: ./app3-mongo/
+    ports:
+      - "8083:8080"
+    links:
+      - jhipster-registry:registry
+    depends_on:
+      - jhipster-registry
+#Centralized logging with ELK
   elk-elasticsearch:
     container_name: elk-elasticsearch
     image: elasticsearch:2.2.0
@@ -58,5 +67,7 @@ services:
     image: kibana:4.4.1
     ports:
       - "5601:5601"
+    environment:
+      - ELASTICSEARCH_URL=http://elk-elasticsearch:9200
     links:
       - elk-elasticsearch:elasticsearch
