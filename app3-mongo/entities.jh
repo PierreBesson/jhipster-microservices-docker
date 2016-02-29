@@ -63,53 +63,6 @@ entity Region {
   regionName String
 }
 
-relationship OneToOne {
-  JobHistory{department} to Department
-}
-
-relationship OneToOne {
-  JobHistory{job} to Job
-}
-
-relationship OneToOne {
-  JobHistory{employee} to Employee
-}
-
-relationship ManyToMany {
-  Job{task(title)} to Task{job}
-}
-
-relationship OneToOne {
-  Department{location} to Location
-}
-
-relationship OneToMany {
-  /**
-   * A relationship
-   */
-  Department{employee} to
-  /**
-   * Another side of the same relationship
-   */
-  Employee
-}
-
-relationship ManyToOne {
-  Employee{manager} to Employee
-}
-
-relationship OneToMany {
-  Employee{job} to Job
-}
-
-relationship OneToOne {
-  Location{country} to Country
-}
-
-relationship OneToOne {
-  Country{region} to Region
-}
-
 paginate JobHistory, Employee with infinite-scroll
 paginate Job with pagination
 
