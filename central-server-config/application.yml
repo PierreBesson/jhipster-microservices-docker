@@ -1,3 +1,8 @@
 #common config shared between all apps
 configserver:
-  status: ${spring.cloud.config.uri}/${spring.cloud.config.name}/${spring.cloud.config.profile}/${spring.cloud.config.label} 
+    status: ${spring.cloud.config.uri}/${spring.cloud.config.name}/${spring.cloud.config.profile}/${spring.cloud.config.label}
+jhipster:
+    security:
+        authentication:
+            jwt:
+                secret: 799a9a6e41923adbd0fa2639c459ad8df0fedab9
