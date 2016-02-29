@@ -18,6 +18,9 @@
       "gatling"
     ],
     "skipClient": true,
-    "skipUserManagement": true
+    "skipUserManagement": true,
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "enableSocialSignIn": false
   }
 }
