@@ -6,3 +6,7 @@ jhipster:
         authentication:
             jwt:
                 secret: 799a9a6e41923adbd0fa2639c459ad8df0fedab9
+    logging:
+        logstash:
+            enabled: true
+            host: elk-logstash

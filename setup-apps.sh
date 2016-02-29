@@ -5,5 +5,5 @@
 apps=("gateway" "app1-mysql" "app2-postgres" "app3-mongo")
 for app in "${apps[@]}";
 do
-    ( cd $app && yo jhipster --force --with-entities) 
+    ( cd $app && yo jhipster --force --with-entities ) 
 done
