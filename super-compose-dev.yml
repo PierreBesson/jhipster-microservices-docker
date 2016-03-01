@@ -29,3 +29,17 @@ services:
     depends_on:
       - jhipster-registry
   #app3-mongo: cannot be extended yet as it uses "links"
+
+  #ELK
+  elk-elasticsearch:
+    extends:
+      file: elk.yml
+      service: elk-elasticsearch
+  elk-logstash:
+    extends:
+      file: elk.yml
+      service: elk-logstash
+  elk-kibana:
+    extends:
+      file: elk.yml
+      service: elk-kibana

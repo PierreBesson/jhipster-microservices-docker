@@ -9,4 +9,4 @@ jhipster:
     logging:
         logstash:
             enabled: true
-            host: localhost
+            host: elk-logstash
