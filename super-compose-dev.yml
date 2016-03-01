@@ -1,0 +1,31 @@
+version: '2'
+services:
+  jhipster-registry:
+    extends:
+      file: app1-mysql/src/main/docker/registry.yml
+      service: jhipster-registry
+    volumes:
+      - ./central-server-config:/central-config
+  gateway:
+    extends:
+      file: gateway/src/main/docker/app.noregistry.dev.yml
+      service: gateway-dev-app
+    depends_on:
+      - jhipster-registry
+  app1-mysql:
+    extends:
+      file: app1-mysql/src/main/docker/app.noregistry.dev.yml
+      service: app1mysql-dev-app
+    ports:
+      - "8081:8081"
+    depends_on:
+      - jhipster-registry
+  app2-postgres:
+    extends:
+      file: app2-postgres/src/main/docker/app.noregistry.dev.yml
+      service: app2postgres-dev-app
+    ports:
+      - "8082:8081"
+    depends_on:
+      - jhipster-registry
+  #app3-mongo: cannot be extended yet as it uses "links"
