@@ -8,6 +8,12 @@ Contributions are welcome. Please check that you are using recent versions of do
 - `mvn package -DskipTests=true`: build all apps
 - `docker-compose up`: launch everything at once
 
+### Super compose
+Alternate way to manage docker images
+- `./build-apps.sh` run `mvn package docker:build -DskipTests=true ` for all apps. This builds apps and generates docker images using `src/main/docker/Dockerfile`.
+- `./build-apps.sh`: mvn package docker:build -Pprod -DskipTests=true ` for all apps.
+- `docker-compose -f super-compose-dev.yml up`
+
 ## How to shutdown and clean up
 - Simply run `docker-compose down`
 The following commands may prove useful:
