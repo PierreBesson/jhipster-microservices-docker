@@ -1,6 +1,6 @@
 #common config shared between all apps
 configserver:
-    status: ${spring.cloud.config.uri}/${spring.cloud.config.name}/${spring.cloud.config.profile}/${spring.cloud.config.label}
+    status: ${spring.cloud.config.uri}/${spring.cloud.config.label}/${spring.cloud.config.name}-${spring.cloud.config.profile}.yml
 jhipster:
     security:
         authentication:

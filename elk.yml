@@ -6,11 +6,13 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    volumes:
+      - ./log-monitoring/log-data:/usr/share/elasticsearch/data
   elk-logstash:
     container_name: elk-logstash
     image: logstash:2.2.2
     volumes:
-      - ./log-monitoring/logconfig/:/config-dir
+      - ./log-monitoring/log-config/:/config-dir
     command: logstash -f /config-dir/logstash.conf
     ports:
       - "5000:5000/udp"
