@@ -3,13 +3,14 @@
 Contributions are welcome. Please check that you are using recent versions of docker and docker-compose.
 
 ## Summary
-This demo demonstrate the use of JHipster 3 and docker to build a microservice architecture.
+This project demonstrates the use of JHipster 3 and docker to build a microservice architecture.
 
 It allows you to run:
 - The JHipster registry
 - An API Gateway
 - Several microservices (app1, app2, etc.) based on different databases.
 - The ELK stack (Elasticsearch, Logstash, Kibana) for log centralization
+- _(future) Graphite/Grafana for metrics centralization_
 
 #### **All working out of the box !**
 
