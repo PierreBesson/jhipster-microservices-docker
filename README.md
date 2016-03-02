@@ -31,7 +31,7 @@ It provides:
 
 ### Run the architecture
 
-At any moment you can use `docker-compose logs appname` to view its logs.
+Note: At any point in the process you can use `docker-compose logs appname` to view its logs.
 
 #### Jhipster-registry (service discovery and config server)
 
