@@ -22,18 +22,57 @@ It provides:
 
 
 ## How to test
+
+### Setup and build
 - `./setup-apps.sh` : run `yo jhipster --force --with-entities` for all apps. This generate JHipster apps from their _.yo-rc.json_.
 - `./setup-entities.sh` : run `jhipster-uml entities.jh` for all apps. This generates entities from the _entities.jh_ JDL file in this app folder.
-- `mvn package -DskipTests=true`: build all apps
-- `docker-compose up`: launch everything at once
-
-### Super compose
-Alternate way to manage docker images
 - `./build-apps.sh` run `mvn package docker:build -DskipTests=true ` for all apps. This builds apps and generates docker images using `src/main/docker/Dockerfile`.
-- `./build-apps.sh`: `mvn package docker:build -Pprod -DskipTests=true` for all apps.
-- `docker-compose -f super-compose-dev.yml up`
+- _(or for prod) `./build-apps-prod.sh`: `mvn package docker:build -Pprod -DskipTests=true` for all apps._
 
-## How to shutdown and clean up
+### Run the architecture
+
+At any moment you can use `docker-compose logs appname` to view its logs.
+
+#### Jhipster-registry (service discovery and config server)
+
+- `docker-compose up -d jhipster-registry`: launch the registry
+- Open `http://localhost:8761/` to view the Eureka console (new microservices instances will automatically register themselves and show up here)
+- Open `http://localhost:8761/config/application-dev.yml` to have a look at the properties that are transfered to all apps in the dev profile. You can edit them in the `/central-server-config`.
+
+#### ELK (log centralization)
+
+- `docker-compose up -d elk-elasticsearch elk-logstash elk-kibana`
+- Open Kibana: `http://localhost:5601`, all logs will show up here.
+
+#### Gateway and microservices
+
+Start the Gateway with:
+- `docker-compose up -d gateway`
+
+It should connect with the registry and show up in the Eureka console.
+- Open the gateway's admin panel: `http://localhost:8080/#/gateway` (log in with admin/admin)
+
+Also logs should have started to show up in Kibana.
+
+Start app1 with:
+- `docker-compose up -d app1-mysql`
+
+Start the other apps:
+- `docker-compose up -d app2-postgres app3-mongo`
+
+#### Scale your apps
+
+You can scale an app by creating **multiple instances** of it (doesn't work on the gateway or other apps that have their ports binded to localhost):
+- `docker-compose scale app1-mysql=2`
+- `docker-compose scale app2-postgres=3`
+
+Then wait for them to show up at `http://localhost:8761/` and `http://localhost:8080/#/gateway`.
+
+#### Stop an app
+- `docker-compose stop appname`
+
+
+## Shutdown and clean up
 - Simply run `docker-compose down`
 The following commands may prove useful:
 - `docker stop $(docker ps -a -q)`: Stop all running containers

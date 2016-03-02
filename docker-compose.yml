@@ -16,16 +16,12 @@ services:
     extends:
       file: app1-mysql/src/main/docker/app.noregistry.dev.yml
       service: app1mysql-dev-app
-    ports:
-      - "8081:8081"
     depends_on:
       - jhipster-registry
   app2-postgres:
     extends:
       file: app2-postgres/src/main/docker/app.noregistry.dev.yml
       service: app2postgres-dev-app
-    ports:
-      - "8082:8081"
     depends_on:
       - jhipster-registry
   #app3-mongo: cannot be extended yet as it uses "links"
