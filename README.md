@@ -34,7 +34,7 @@ Then, generate samples entities from the _entities.jh_ JDL file in each app's di
 
 Finally, build apps and generate docker images for them.  `mvn package docker:build -DskipTests=true`
 
-    `./build-apps.sh` 
+    ./build-apps.sh
     
 This script runs `mvn package docker:build -DskipTests=true` for all apps, the `app/src/main/docker/Dockerfile` is used by maven-docker plugin to build the docker image.
 
