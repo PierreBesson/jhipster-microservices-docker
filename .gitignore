@@ -1,0 +1,8 @@
+app1-mysql/
+!app1-mysql/.yo-rc.json
+app2-postgres/
+!app2-postgres/.yo-rc.json
+app3-mongo/
+!app3-mongo/.yo-rc.json
+app4-nodb/
+!app4-nodb/.yo-rc.json
