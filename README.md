@@ -1,6 +1,6 @@
 # The Hipster of All Demos
 
-Contributions are welcome. Please check that you are using recent versions of docker and docker-compose.
+Contributions are welcome.
 
 ## Summary
 This project demonstrates the use of JHipster 3 and docker to build a microservice architecture.
@@ -24,20 +24,29 @@ It provides:
 ## How to test
 
 ### Setup and build
-- `./setup-apps.sh` : run `yo jhipster --force --with-entities` for all apps. This generate JHipster apps from their _.yo-rc.json_.
-- `./setup-entities.sh` : run `jhipster-uml entities.jh` for all apps. This generates entities from the _entities.jh_ JDL file in this app folder.
-- `./build-apps.sh` run `mvn package docker:build -DskipTests=true ` for all apps. This builds apps and generates docker images using `src/main/docker/Dockerfile`.
-- _(or for prod) `./build-apps-prod.sh`: `mvn package docker:build -Pprod -DskipTests=true` for all apps._
+First, generate all JHipster apps from their _.yo-rc.json_.
 
-### Run the architecture
+    ./setup-apps.sh
+    
+Then, generate samples entities from the _entities.jh_ JDL file in each app's directory
 
-At any moment you can use `docker-compose logs appname` to view its logs.
+    ./setup-entities.sh
 
-#### Jhipster-registry (service discovery and config server)
+Finally, build apps and generate docker images for them.  `mvn package docker:build -DskipTests=true`
+
+    ./build-apps.sh
+    
+This script runs `mvn package docker:build -DskipTests=true` for all apps, the `app/src/main/docker/Dockerfile` is used by maven-docker plugin to build the docker image.
+
+### Run everything
+
+Note: At any point in the process you can use `docker-compose logs appname` to view its logs.
+
+#### Start the JHipster Eegistry (service discovery and configuration server)
 
 - `docker-compose up -d jhipster-registry`: launch the registry
 - Open `http://localhost:8761/` to view the Eureka console (new microservices instances will automatically register themselves and show up here)
-- Open `http://localhost:8761/config/application-dev.yml` to have a look at the properties that are transfered to all apps in the dev profile. You can edit them in the `/central-server-config`.
+- Open `http://localhost:8761/config/application-dev.yml` to have a look at the properties that are transfered to all apps in the dev profile. You can edit them in the `/central-server-config` directory.
 
 #### ELK (log centralization)
 
@@ -77,16 +86,6 @@ Then wait for them to show up at `http://localhost:8761/` and `http://localhost:
 The following commands may prove useful:
 - `docker stop $(docker ps -a -q)`: Stop all running containers
 - Then `docker rm $(docker ps -a -q)`: Remove all containers
-
-## Rules
-- The JHipster Registry must be run from the docker hub image
-- Keep only .yo-rc.json and entities.jh in the apps folders
-- Gateway and microservices must be generated from generator-jhipster's latest master (clone latest master and run `npm link`)
-
-## Guidelines:
-- Dev and Prod profiles setups must be tested
-- Use only Maven for now
-- Use the power of Docker Compose v2
 
 ## TODO
 - Switch between dev and prod ~~with an environment variable~~ different compose files.
