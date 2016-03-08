@@ -8,4 +8,4 @@ services:
     ports:
       - "8761:8761"
     volumes:
-      - ./central-config:/central-config
+      - ./central-server-config:/central-config
