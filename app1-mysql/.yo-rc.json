@@ -21,6 +21,7 @@
     "skipUserManagement": true,
     "clusteredHttpSession": "no",
     "websocket": "no",
-    "enableSocialSignIn": false
+    "enableSocialSignIn": false,
+    "serverPort": 9081
   }
 }

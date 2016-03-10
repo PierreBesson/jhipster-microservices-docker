@@ -24,6 +24,7 @@
     "enableSocialSignIn": false,
     "languages": [
       "en"
-    ]
+    ],
+    "serverPort": 9080
   }
 }
