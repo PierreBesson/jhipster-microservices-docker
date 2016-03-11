@@ -18,8 +18,8 @@ It provides:
 - Scripts to setup the apps (you need to have jhipster and jhipster-uml installed) 
 - `.yo-rc.json` files in app1, app2, app3 directory that will be used to generate JHipster apps
 - A `central-server-config/` directory that can be used to edit the registry's config server configuration but _only in dev profile_ (a git repository is used in prod profile)
-- Docker compose files to orchestrate docker containers
 
+It depends on [generator-jhipster-docker-compose](https://github.com/jhipster/generator-jhipster-docker-compose) to generate a global docker-compose file.
 
 ## How to test
 
@@ -37,6 +37,13 @@ Finally, build apps and generate docker images for them.  `mvn package docker:bu
     ./build-apps.sh
     
 This script runs `mvn package docker:build -DskipTests=true` for all apps, the `app/src/main/docker/Dockerfile` is used by maven-docker plugin to build the docker image.
+
+Generate a Docker-compose file:
+
+    yo jhipster-docker-compose
+
+And answer the questions.
+
 
 ### Run everything
 
@@ -64,16 +71,16 @@ It should connect with the registry and show up in the Eureka console.
 Also logs should have started to show up in Kibana.
 
 Start app1 with:
-- `docker-compose up -d app1-mysql`
+- `docker-compose up -d app1`
 
 Start the other apps:
-- `docker-compose up -d app2-postgres app3-mongo`
+- `docker-compose up -d app2 app3`
 
 #### Scale your apps
 
 You can scale an app by creating **multiple instances** of it (doesn't work on the gateway or other apps that have their ports binded to localhost):
-- `docker-compose scale app1-mysql=2`
-- `docker-compose scale app2-postgres=3`
+- `docker-compose scale app1=2`
+- `docker-compose scale app2=3`
 
 Then wait for them to show up at `http://localhost:8761/` and `http://localhost:8080/#/gateway`.
 
@@ -92,5 +99,3 @@ The following commands may prove useful:
 - Boot up the database by extending src/main/docker/prod.yml
 - (Bonus) Use log_driver to forward database logs to ELK through syslog
 
-## Future
-- Think about automating deployment to cloud platforms (AWS, Cloudfoundry, etc...) and orchestration on multiple hosts (Docker Swarm ?).

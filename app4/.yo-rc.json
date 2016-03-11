@@ -1,18 +1,18 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "2.27.0",
-    "baseName": "app1MySQL",
+    "baseName": "jhipster",
     "packageName": "io.jhipster.dockermicroservices",
     "packageFolder": "io/jhipster/dockermicroservices",
     "authenticationType": "jwt",
-    "hibernateCache": "ehcache",
-    "databaseType": "sql",
-    "devDatabaseType": "h2Disk",
-    "prodDatabaseType": "mysql",
+    "hibernateCache": "no",
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "prodDatabaseType": "no",
     "searchEngine": "no",
     "buildTool": "maven",
-    "jwtSecretKey": "799a9a6e41923adbd0fa2639c459ad8df0fedab9",
-    "rememberMeKey": "f77f022a70be8bfc6c43fc49d76a43548594bb00",
+    "jwtSecretKey": "87a253b800dde6119c988214fbee5d538b89727f",
+    "rememberMeKey": "cc8e85a92ad8784fd4a965a66d337de4ebb0e706",
     "applicationType": "microservice",
     "testFrameworks": [
       "gatling"
@@ -22,6 +22,6 @@
     "clusteredHttpSession": "no",
     "websocket": "no",
     "enableSocialSignIn": false,
-    "serverPort": 9081
+    "serverPort": 8084
   }
 }
