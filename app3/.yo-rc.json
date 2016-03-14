@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "2.27.0",
-    "baseName": "app3MongoDB",
+    "baseName": "app3",
     "packageName": "io.jhipster.dockermicroservices",
     "packageFolder": "io/jhipster/dockermicroservices",
     "authenticationType": "jwt",
@@ -12,7 +12,6 @@
     "searchEngine": "no",
     "buildTool": "maven",
     "jwtSecretKey": "799a9a6e41923adbd0fa2639c459ad8df0fedab9",
-    "rememberMeKey": "9c913d062059aaeaa26e712b9ec6ffb84d4702e0",
     "applicationType": "microservice",
     "testFrameworks": [
       "gatling"

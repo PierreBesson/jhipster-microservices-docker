@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "2.27.0",
-    "baseName": "jhipster",
+    "baseName": "app4",
     "packageName": "io.jhipster.dockermicroservices",
     "packageFolder": "io/jhipster/dockermicroservices",
     "authenticationType": "jwt",
