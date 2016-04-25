@@ -1,6 +1,6 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "2.27.0",
+    "jhipsterVersion": "3.1.0",
     "baseName": "app2",
     "packageName": "io.jhipster.dockermicroservices",
     "packageFolder": "io/jhipster/dockermicroservices",
@@ -21,6 +21,7 @@
     "clusteredHttpSession": "no",
     "websocket": "no",
     "enableSocialSignIn": false,
-    "serverPort": 8082
+    "serverPort": 8082,
+    "jhiPrefix": "jhi"
   }
 }

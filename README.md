@@ -16,7 +16,7 @@ It allows you to run:
 
 It provides:
 - Scripts to setup the apps (you need to have jhipster and jhipster-uml installed) 
-- `.yo-rc.json` files in app1, app2, app3 directory that will be used to generate JHipster apps
+- `.yo-rc.json` files in app1, app2, app3, app4 directory that will be used to generate JHipster apps
 - A `central-server-config/` directory that can be used to edit the registry's config server configuration but _only in dev profile_ (a git repository is used in prod profile)
 
 It depends on [generator-jhipster-docker-compose](https://github.com/jhipster/generator-jhipster-docker-compose) to generate a global docker-compose file.
@@ -40,7 +40,7 @@ This script runs `mvn package docker:build -DskipTests=true` for all apps, the `
 
 Generate a Docker-compose file:
 
-    yo jhipster-docker-compose
+    yo jhipster:docker-compose
 
 And answer the questions.
 
